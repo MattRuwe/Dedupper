@@ -10,7 +10,7 @@ There are 3 main operating modes for the dedupper:
 - **--source (-s)** - the root file path to search for files.  The application will recursively look through all of the files in this location, read their contents, calculate a hash and store the results in the application database
 
 **Example**  
-`dotnet Dedupper --find --source "c:\my files"`
+`dotnet Dedupper.dll find --source "c:\my files"`
 
 ## Choose Options
 - **--source (-s)** - The root file path to search for files.  This is needed so the folder structure can be acurately recreated in the backup location location.
@@ -18,7 +18,11 @@ There are 3 main operating modes for the dedupper:
 - **--match (-m)** - A regular expression used to accelerate the process of choosing a file.  The first file that the application encounters that matches the regular expression will be selected as the file to keep.  The other files will automatically be moved to the backup folder.
 
 **Example**  - Selects files that contains numbers in their path as the file to keep:  
-`dotnet Dedupper --choose --source "c:\my files" --backup "c:\my backup files" --match "[0-9]"`
+`dotnet Dedupper.dll choose --source "c:\my files" --backup "c:\my backup files" --match "[0-9]"`
 
 ## Verify Options
 - **None**
+
+**Example** - Verifies that all files contained within the application database still exist on disk.  If the database contains a file that doesn't exist on disk, the application will remove it from the database.
+
+`dotnet Dedupper.dll verify`

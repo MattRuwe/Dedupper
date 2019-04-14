@@ -15,7 +15,7 @@ namespace MattRuwe.Dedupper
     }
 
     [Verb("verify")]
-    class VerifyDupsOptions : CommonOptions
+    class VerifyDupsOptions
     {
 
     }
